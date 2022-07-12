@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import CardsList from './components/Cards/CardsList';
 
-function App() {
+const App = () => {
+  // let [userData, setUserData] = useState(null);
+  // useEffect(() => {
+  //   fetch(
+  //     'http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/1/20'
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => setUserData(data.list));
+  // }, []);
+  // console.log(userData, 'data');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Route element={<CardsList />} path="/" />
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
