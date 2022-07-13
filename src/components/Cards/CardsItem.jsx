@@ -1,18 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './CardsItem.module.css';
 
-const CardsItem = (props) => {
-  const card = props.cardData;
+const CardsItem = ({ cardData }) => {
   return (
-    <li key={card.id} className={styles.listItem}>
-      <div>
-        <img src={card.imageUrl} alt={`${card.name} ${card.lastName}`} />
-      </div>
-      <div>
-        <h2>{`${card.prefix} ${card.name} ${card.lastName}`}</h2>
-        <p>{card.title}</p>
-      </div>
-    </li>
+    <>
+      <Link to={`/user/${cardData.id}`}>
+        <li key={cardData.id} className={styles.listItem}>
+          <div>
+            <img
+              src={cardData.imageUrl}
+              alt={`${cardData.name} ${cardData.lastName}`}
+            />
+          </div>
+          <div>
+            <h2>{`${cardData.prefix} ${cardData.name} ${cardData.lastName}`}</h2>
+            <p>{cardData.title}</p>
+          </div>
+        </li>
+      </Link>
+    </>
   );
 };
 
