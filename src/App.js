@@ -16,6 +16,7 @@ const App = () => {
   // console.log(userData, 'data');
   return (
     <div className="App">
+    {/* <CardsList data={userData} /> */}
       <Router>
         <Route element={<CardsList />} path="/" />
       </Router>
