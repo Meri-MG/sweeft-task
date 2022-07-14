@@ -12,7 +12,7 @@ export default function useCardData(pageNumber) {
     const controller = new AbortController();
     const signal = controller.signal;
     fetch(
-      `http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${pageNumber}/20`,
+      `http://sweeftdigital-intern.eu-central-1.elasticbeanstalk.com/user/${pageNumber}/10`,
       { signal }
     )
       .then((response) => response.json())

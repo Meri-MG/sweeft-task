@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback } from 'react';
 import useCardData from '../../hooks/useCardData';
+import Loading from '../UI/Loading';
 import CardsItem from './CardsItem';
 import styles from './CardsList.module.css';
 
@@ -36,7 +37,7 @@ const CardsList = () => {
           return <CardsItem cardData={card} key={card.id} />;
         }
       })}
-      <div>{loading && 'Loading Users...'}</div>
+      <div>{loading && <Loading />}</div>
       <div>{error && 'Error'}</div>
     </ul>
   );

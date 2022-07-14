@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import styles from './CardsItem.module.css';
 
 const CardsItem = ({ cardData }) => {
+  const randomImg = `?q=${cardData.id}`;
   return (
     <>
       <Link to={`/user/${cardData.id}`}>
         <li key={cardData.id} className={styles.listItem}>
           <div>
             <img
-              src={cardData.imageUrl}
+              src={cardData.imageUrl + randomImg}
               alt={`${cardData.name} ${cardData.lastName}`}
             />
           </div>

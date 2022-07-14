@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
 import './App.css';
 import CardsList from './components/Cards/CardsList';
-import DetailsPage from './components/User/DetailsPage';
+import DetailsPage from './components/Cards/DetailsPage';
 
 const App = () => {
   return (
