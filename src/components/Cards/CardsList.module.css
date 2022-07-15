@@ -1,0 +1,28 @@
+.cardsList {
+  width: 98%;
+  margin: 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .cardsList {
+    width: 95%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .cardsList {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,103 @@
+.container {
+  border: 1px solid #ccc;
+  margin: 0 2rem;
+  padding: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.imgWrapper {
+  width: 35%;
+}
+
+.imgWrapper img {
+  width: 100%;
+}
+
+.wrapper fieldset {
+  width: 60%;
+  height: 220px;
+  padding: 1rem;
+  text-align: start;
+}
+
+.fieldset span {
+  text-decoration: underline;
+  padding: 0;
+}
+
+.fieldset p {
+  padding: 0;
+}
+
+fieldset h4 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.fieldset.one {
+  width: 70%
+}
+
+fieldset.two {
+  width: 30%;
+}
+
+.history {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0;
+}
+
+.container  h2 {
+  text-align: start;
+  margin-bottom: 2rem;
+}
+
+.history .links {
+  text-decoration: underline;
+}
+
+.history .arrow {
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .imgWrapper,
+  .fieldset.one,
+  fieldset.two,
+  h2,
+  .history {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  h2,
+  .history {
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 950px) {
+  .wrapper fieldset {
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .history {
+    display: flex;
+    flex-direction: column;
+  }
+}
