@@ -21,7 +21,7 @@
 
 .wrapper fieldset {
   width: 60%;
-  height: 200px;
+  height: 220px;
   padding: 1rem;
   text-align: start;
 }
@@ -74,11 +74,6 @@ fieldset.two {
     flex-direction: column;
   }
 
-  .wrapper fieldset {
-    width: 60%;
-    height: auto;
-  }
-
   .imgWrapper,
   .fieldset.one,
   fieldset.two,
@@ -91,5 +86,11 @@ fieldset.two {
   h2,
   .history {
     margin: 2rem auto;
+  }
+}
+
+@media (max-width: 950px) {
+  .wrapper fieldset {
+    height: auto;
   }
 }
