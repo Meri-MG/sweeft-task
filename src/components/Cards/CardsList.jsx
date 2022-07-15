@@ -25,21 +25,23 @@ const CardsList = () => {
   );
 
   return (
-    <ul className={styles.cardsList}>
-      {userData?.map((card, index) => {
-        if (userData.length === index + 1) {
-          return (
-            <div ref={lastCardElementRef} key={card.id}>
-              <CardsItem cardData={card} />
-            </div>
-          );
-        } else {
-          return <CardsItem cardData={card} key={card.id} />;
-        }
-      })}
-      <div>{loading && <Loading />}</div>
+    <>
+      <div className={styles.loading}>{loading && <Loading />}</div>
       <div>{error && 'Error'}</div>
-    </ul>
+      <ul className={styles.cardsList}>
+        {userData?.map((card, index) => {
+          if (userData.length === index + 1) {
+            return (
+              <div ref={lastCardElementRef} key={card.id}>
+                <CardsItem cardData={card} />
+              </div>
+            );
+          } else {
+            return <CardsItem cardData={card} key={card.id} />;
+          }
+        })}
+      </ul>
+    </>
   );
 };
 

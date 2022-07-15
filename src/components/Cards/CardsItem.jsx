@@ -15,7 +15,7 @@ const CardsItem = ({ cardData }) => {
             />
           </div>
           <div>
-            <h2>{`${cardData.prefix} ${cardData.name} ${cardData.lastName}`}</h2>
+            <h3>{`${cardData.prefix} ${cardData.name} ${cardData.lastName}`}</h3>
             <p>{cardData.title}</p>
           </div>
         </li>

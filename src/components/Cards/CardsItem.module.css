@@ -3,9 +3,11 @@
     cursor: pointer;
 }
 
-.listItem h2,
+.listItem h3,
 p {
     padding: 2px 10px;
+    color: #000;
+    text-align: start;
 }
 
 .listItem img {

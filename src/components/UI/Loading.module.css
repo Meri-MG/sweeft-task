@@ -1,9 +1,15 @@
+.loadingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .center {
-    height: 10vh;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
   .wave {
@@ -13,6 +19,7 @@
     background: #008000;
     animation: wave 1s linear infinite;
     border-radius: 2px;
+    align-self: center;
   }
 
   .wave:nth-child(2) {
