@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Loading.module.css';
 
-function Loading() {
+const Loading = () => {
   return (
     <div className={styles.loadingWrapper}>
       <div className={styles.center}>
@@ -11,6 +11,6 @@ function Loading() {
       </div>
     </div>
   );
-}
+};
 
 export default Loading;

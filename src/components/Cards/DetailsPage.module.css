@@ -94,3 +94,10 @@ fieldset.two {
     height: auto;
   }
 }
+
+@media (max-width: 500px) {
+  .history {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../Cards/CardsItem.module.css';
 
-function FriendsItem({ cardData }) {
+const FriendsItem = ({ cardData }) => {
   const randomImg = `?q=${cardData.id}`;
 
   return (
@@ -23,6 +23,6 @@ function FriendsItem({ cardData }) {
       </Link>
     </>
   );
-}
+};
 
 export default FriendsItem;

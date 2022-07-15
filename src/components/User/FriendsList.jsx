@@ -4,14 +4,13 @@ import Loading from '../UI/Loading';
 import FriendsItem from './FriendsItem';
 import styles from '../Cards/CardsList.module.css';
 
-function FriendsList({ cardId }) {
+const FriendsList = ({ cardId }) => {
   const [pageNumber, setPageNumber] = useState(1);
 
   const { userData, hasMore, loading, error } = useFriendsData(
     cardId,
     pageNumber
   );
-  console.log(userData, 'data');
 
   const observer = useRef();
   const lastCardElementRef = useCallback(
@@ -46,6 +45,6 @@ function FriendsList({ cardId }) {
       </ul>
     </>
   );
-}
+};
 
 export default FriendsList;
