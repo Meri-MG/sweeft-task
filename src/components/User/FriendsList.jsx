@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { useState, useRef, useCallback } from 'react';
+import useFriendsData from '../../hooks/useFriendsData';
+import Loading from '../UI/Loading';
+import FriendsItem from './FriendsItem';
+import styles from '../Cards/CardsList.module.css';
 
-function FriendsList({ friends }) {
-  console.log(friends, 'friendslist');
+function FriendsList({ cardId }) {
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const { userData, hasMore, loading, error } = useFriendsData(
+    cardId,
+    pageNumber
+  );
+  console.log(userData, 'data');
+
+  const observer = useRef();
+  const lastCardElementRef = useCallback(
+    (node) => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPageNumber((prevPageNumber) => prevPageNumber + 1);
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [loading, hasMore]
+  );
   return (
-    // <li key={cardData.id} className={styles.listItem}>
-    //       <div>
-    //         <img
-    //           src={cardData.imageUrl}
-    //           alt={`${cardData.name} ${cardData.lastName}`}
-    //         />
-    //       </div>
-    //       <div>
-    //         <h2>{`${cardData.prefix} ${cardData.name} ${cardData.lastName}`}</h2>
-    //         <p>{cardData.title}</p>
-    //       </div>
-    //     </li>
-    <div>friends</div>
+    <>
+      <div>{loading && <Loading />}</div>
+      <div>{error && 'Error'}</div>
+      <ul className={styles.cardsList}>
+        {userData?.map((card, index) => {
+          if (userData.length - 1 === index) {
+            return (
+              <div ref={lastCardElementRef} key={card.id}>
+                <FriendsItem cardData={card} />
+              </div>
+            );
+          } else {
+            return <FriendsItem cardData={card} key={card.id} />;
+          }
+        })}
+      </ul>
+    </>
   );
 }
 
